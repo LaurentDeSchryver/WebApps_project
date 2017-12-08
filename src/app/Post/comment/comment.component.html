@@ -1,0 +1,31 @@
+<div class="panel-body">
+    <div class="media">
+       </div>
+        <div class="media-body">
+            <div  id="content">
+            <p>{{post._id}}</p>
+            <p>{{post.description}}</p>
+            <p>posted by: {{post.posterid}}</p>
+            <ul class="nav nav-pills nav-pills-custom">
+                <li><span class="count">{{post.likes}}</span></li>
+                <li><a (click)="upvote()"><span class="glyphicon glyphicon-arrow-up"></span></a></li>
+                <li><a (click)="downvote()"><span class="glyphicon glyphicon-arrow-down"></span></a></li>
+                <li><button (click)="showbox()">Comment</button></li>
+                
+            </ul>
+            <div *ngIf="showme">
+                <form [formGroup]='comment' (ngSubmit)='onSubmit(empForm, $event)'>
+                    <input type="text" id="comment" formControlName="description">
+                    <button type="submit" value="Submit">submit</button>
+                </form>
+            </div>
+            </div>
+            <div class="comments">
+            <li *ngFor="let posteke of postssub">
+                <app-comment [post]="posteke"></app-comment>
+              </li>
+              </div>
+            
+            
+        </div>
+    </div>

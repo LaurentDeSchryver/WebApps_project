@@ -1,0 +1,16 @@
+.postphoto{
+    float:left;
+}
+.postcontent{
+    float:left;
+}
+#image{
+    width:100px;
+    height:100px;
+}
+.comments{
+    margin-left:50px;
+}
+#content{
+    border : solid 2px;
+}

@@ -1,0 +1,21 @@
+
+      <div class="panel-body">
+        <div class="media">
+            <a class="media-left" href="#fake">
+                <img alt="een fotoken" class="media-object img-rounded" id="image" src="{{post.photoUrl}}">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{post.title}}</h4>
+                <p>{{post.description}}</p>
+                <p>posted by: {{post.posterid}}</p>
+                <ul class="nav nav-pills nav-pills-custom">
+                    <li><span class="count">{{post.likes}}</span></li>
+                    <li><a (click)="upvote()"><span class="glyphicon glyphicon-arrow-up"></span></a></li>
+                    <li><a (click)="downvote()"><span class="glyphicon glyphicon-arrow-down"></span></a></li>
+                    <li><a routerLinkActive='active' [routerLink] = "['../comments', {idkey :post.id}]"><span class="glyphicon glyphicon-comment"></span></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+
+ 

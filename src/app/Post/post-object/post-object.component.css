@@ -1,0 +1,10 @@
+.postphoto{
+    float:left;
+}
+.postcontent{
+    float:left;
+}
+#image{
+    width:100px;
+    height:100px;
+}

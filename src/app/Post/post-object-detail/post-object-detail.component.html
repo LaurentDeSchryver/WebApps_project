@@ -1,0 +1,39 @@
+<div class="panel-body">
+    <div class="media">
+        <a class="media-left" href="#fake">
+            <img alt="een fotoken" class="media-object img-rounded" id="image" src="{{post.photoUrl}}">
+        </a>
+        
+        <div class="media-body">
+          <div  id="content">
+            <h4 class="media-heading">{{post.title}}</h4>
+         
+            <p>{{post.description}}</p>
+            <p>posted by: {{post.posterid}}</p>
+            <ul class="nav nav-pills nav-pills-custom">
+                <li><span class="count">{{post.likes}}</span></li>
+                <li><a (click)="upvote()"><span class="glyphicon glyphicon-arrow-up"></span></a></li>
+                <li><a (click)="downvote()"><span class="glyphicon glyphicon-arrow-down"></span></a></li>
+                <li><button (click)="showbox()">Comment</button></li>
+                
+            </ul>
+            <div *ngIf="showme">
+                <form [formGroup]='comment' (ngSubmit)='onSubmit(empForm, $event)'>
+                    <input type="text" id="comment" formControlName="description">
+                    <button type="submit" value="Submit">submit</button>
+                </form>
+            </div>
+            </div>
+            <div class="comments">
+            <li *ngFor="let posteke of post.comments">
+                <app-comment [post]="posteke" ></app-comment>
+              </li>
+            </div>
+          
+           
+           
+            
+        </div>
+        
+    </div>
+    

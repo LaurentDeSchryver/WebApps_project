@@ -1,0 +1,51 @@
+<div class="container">
+<form [formGroup]='post' (ngSubmit)='onSubmit()'>
+  <div class="row">
+    <div class="col-25">
+      <label for="title_id">title:</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="title_id" formControlName="title" placeholder="Insert title..">
+    </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="category">Category</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="category" placeholder="Insert Category (not working yet)">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="photourl">Image</label>
+    </div>
+    <div class="col-75">
+        <div class="form-group" [ngClass]="{
+          'has-danger': post.controls.photourl.invalid && post.controls.photourl.dirty, 
+          'has-success': post.controls.photourl.valid && post.controls.photourl.dirty 
+        }">
+      <input type="text" id="photourl" formControlName="photourl" placeholder="Insert image url..">
+     </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="description">Description</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" formControlName="description" placeholder="Write something.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
+
+
+
+
+

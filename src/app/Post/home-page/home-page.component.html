@@ -1,0 +1,8 @@
+<h1>Today's Post</h1>
+<div class="postoverview">
+    <ul style="list-style-type: none;">
+      <li *ngFor="let post of posts">
+        <app-post-object  [post]="post" ></app-post-object>
+      </li>
+    </ul>
+  </div>

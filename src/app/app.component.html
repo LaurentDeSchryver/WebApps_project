@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="topnav" id="myTopnav">
+  <a class="active" routerLinkActive='active' routerLink="Post/homepage">Home</a>
+  <a routerLinkActive='active' routerLink="Post/addpost">Add new post</a>
+  <a routerLinkActive='active' routerLink="Post/myposts">My Posts</a>
+ 
+  
+  <a *ngIf='(currentUser | async) else loginlink' class="logreg" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+  <ng-template #loginlink>
+      <a class="logreg" routerLinkActive='active' routerLink="/register">register</a>
+    <a class="logreg" routerLinkActive='active' routerLink="/login">log in</a>
+  </ng-template>
+
+  
+   
+  
+  
+</div>
+<router-outlet></router-outlet>
+
